@@ -1,0 +1,7 @@
+{
+  "name": "Roster Master",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
