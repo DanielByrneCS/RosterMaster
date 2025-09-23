@@ -7,11 +7,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-content>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera"></ion-icon>
+    <!-- Button to upload a photo -->
+    <ion-fab-button (click)="triggerFileUpload()">
+      <ion-icon name="cloud-upload"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-content>
+  <!-- Button to upload a photo -->
+  <ion-item lines="none">
+    <ion-label>Upload a Photo</ion-label>
+    <input
+      type="file"
+      accept="image/*"
+      (change)="handleFileInput($event)"
+    />
+  </ion-item>
 </ion-content>

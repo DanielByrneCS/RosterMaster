@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab1',
@@ -9,5 +10,13 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
 })
 export class Tab1Page {
-  constructor() {}
+  detectedText: string = 'No text detected yet.';
+
+  constructor(private photoService: PhotoService) {}
+
+  async captureAndDetectText() {
+    this.detectedText = 'Processing...';
+    await this.photoService.addNewToGallery();
+    this.detectedText = 'Text detection completed.';
+  }
 }

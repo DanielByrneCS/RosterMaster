@@ -33,6 +33,11 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ionic/pwa-elements/dist/ionic-pwa-elements",
+                "output": "./pwa-elements"
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
